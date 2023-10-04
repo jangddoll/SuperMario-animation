@@ -155,14 +155,11 @@
     position: absolute;
     top: -32px;
     left: 0;
-    animation: movingMario 4s linear infinite;
-    width: 32px;
-    height: 32px;
-    background: #000;
+    animation: movingMario 9s linear infinite, walkingMario 0.8s steps(4) infinite, jumpingMario 9s step-start infinite;
+    width: 31px;
+    height: 32px; 
+    background: url("../img/Mario-walk.png") left center;
 }
-
-/* bg가 x축으로 약 30px씩 움직여야 함.. */
-/* 50% 지점에서 점프하는 걸 구현하려면? 직전까지 top을 유지하면 됨 */
 
 @keyframes movingMario{
     0%{
@@ -173,9 +170,9 @@
         top: -32px;
     }
     75%{
-        top: -140px;
+        top: -150px;
     }
-    90%{
+    85%{
         top: -32px;
     }
     100%{
@@ -183,3 +180,31 @@
         left: 100%;
     }
 }
+@keyframes walkingMario {
+    100%{
+        background-position: -128px;
+    }
+}
+/* @keyframes jumpingMario {
+    0%{
+        background: url("../img/Mario-walk.png");
+    }
+    64%{
+        background: url("../img/Mario-walk.png");
+    }
+    65%{
+        background: url("../img/Mario\ -\ Jump.gif") left center;
+    }
+    85%{
+        background: url("../img/Mario\ -\ Jump.gif") left center;    
+    }
+    86%{
+        background: url("../img/Mario-walk.png");
+    }
+    100%{
+        background: url("../img/Mario-walk.png");
+    }
+} */
+/* background: url("../img/Mario-walk.png") left center; */
+
+
